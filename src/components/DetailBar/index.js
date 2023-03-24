@@ -8,7 +8,7 @@ import './DetailBar.css';
 
 const DetailBar = ({ isOpen, onToggle, detailID }) => {
     const dispatch = useDispatch();
-    const { data, loading, error } = useSelector(state => state.activityDetail);
+    const { data, loading } = useSelector(state => state.activityDetail);
 
     const [details, setDetails] = useState([])
 
@@ -90,7 +90,7 @@ const DetailBar = ({ isOpen, onToggle, detailID }) => {
                                 {details.direction &&
                                     <div className='detail-row'>
                                         <h3>Call type:</h3>
-                                        <h4>{details.direction == "inbound" ? "Incoming" : "Outgoing"}</h4>
+                                        <h4>{details.direction === "inbound" ? "Incoming" : "Outgoing"}</h4>
                                     </div>
                                 }
                             </div>

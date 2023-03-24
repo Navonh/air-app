@@ -22,7 +22,7 @@ const ActivityCard = ({
         <div className="card-block">
             <div className={"card-block-row"}>
                 <div className="direction-icon">
-                    <img src={direction == 'inbound' ? Inbound : Outbound} />
+                    <img src={direction === 'inbound' ? Inbound : Outbound} alt="direction" />
                 </div>
                 <div>
                     <h5>{formattedTime}</h5>

@@ -8,11 +8,11 @@ const Button = ({ title, onClick, disabled, btnType, btnStyle, icon }) => {
     return (
         <button
             onClick={onClick}
-            className={`btn ${btnStyle == 'outlined' ? 'btn-outline' : btnStyle == 'underlined' ? 'btn-underline' : 'btn-filled'} ${btnType == 'primary' ? 'btn-primary' : 'btn-secondary'}`}
+            className={`btn ${btnStyle === 'outlined' ? 'btn-outline' : btnStyle === 'underlined' ? 'btn-underline' : 'btn-filled'} ${btnType === 'primary' ? 'btn-primary' : 'btn-secondary'}`}
             disabled={disabled}
         >
             {icon &&
-                <img src={icon} className="icon" />}
+                <img src={icon} className="icon" alt="icon" />}
             {title}
         </button >
     )

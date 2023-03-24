@@ -5,14 +5,14 @@ import DetailBar from "../components/DetailBar";
 import '../styles/activityFeed.css'
 import Archive from '../images/download-file.png';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchRecords, updateActivities } from "../store/slices/getActivitiesReducer";
+import { fetchRecords } from "../store/slices/getActivitiesReducer";
 import Loader from "../components/loader";
 import { patchhRecords } from "../store/slices/patchActivitesReducer";
 
 const ActivityFeed = () => {
     const dispatch = useDispatch();
-    const { data: activitiesData, loading: activitiesLoading, error: activitiesError } = useSelector(state => state.activities);
-    const { data: patchData, loading: patchLoading, error: patchError } = useSelector(state => state.patchActivites);
+    const { data: activitiesData, loading: activitiesLoading } = useSelector(state => state.activities);
+    const { data: patchData, loading: patchLoading } = useSelector(state => state.patchActivites);
 
     const [isOpen, setIsOpen] = useState(false);
     const [activites, setActivites] = useState([])
@@ -41,7 +41,7 @@ const ActivityFeed = () => {
     const handleArchive = async (callId, isArchived, callback = null, type) => {
         dispatch(patchhRecords(callId, !isArchived)).then(() => {
             // Once the PATCH request is successful, fetch the latest data
-            if (type == "single" && patchData.length > 0) {
+            if (type === "single" && patchData.length > 0) {
                 alert(patchData);
             }
             if (typeof callback === 'function') {
