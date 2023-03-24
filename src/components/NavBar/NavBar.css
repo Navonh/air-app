@@ -1,0 +1,40 @@
+.header {
+    position: sticky;
+    top: 0px;
+    background: inherit;
+    margin-bottom: 15px;
+    z-index: 1;
+}
+.header .navbar-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 50px;
+}
+.header .navbar-main .navbar-left .navbar-heading {
+    font-size: 22px;
+    font-weight: 600;
+    color: #333 !important;
+    font-family: 'Poppins', sans-serif;
+}
+.header .navbar-main .navbar-right{
+    display: flex;
+    align-items: center;
+}
+.header .navbar-main .navbar-right .notification-count {
+    font-size: 15px;
+    font-weight: 600;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FC5724;
+    color: #fff;
+    border-radius: 50%;
+}
+a {
+    text-decoration: none !important;
+    color: inherit;
+}

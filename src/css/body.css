@@ -1,0 +1,48 @@
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+}
+
+body {
+  background: #fbfbfd;
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  color: #333333;
+  line-height: 1;
+  overflow-x: hidden;
+}
+
+h2{
+  font-size: 30px !important;
+  font-weight: 500 !important;
+  color: #000 !important;
+}
+
+h3{
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #333 !important;
+}
+
+h4{
+  font-size: 14px !important;
+  color: #656F74 !important;
+  font-weight: 400 !important;
+}
+
+h5{
+  font-size: 11px !important;
+  color: #aaa;
+  font-weight: 400;
+}

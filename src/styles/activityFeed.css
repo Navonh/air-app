@@ -1,0 +1,13 @@
+main{
+    flex: 1;
+    background: #fbfbfd;
+}
+.main-content{
+    max-width: calc(100% - 80px);
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
