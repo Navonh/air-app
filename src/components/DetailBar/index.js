@@ -11,6 +11,7 @@ const DetailBar = ({ isOpen, onToggle, detailID }) => {
     const { data, loading } = useSelector(state => state.activityDetail);
 
     const [details, setDetails] = useState([])
+    const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
         if (!detailID) {
@@ -28,13 +29,37 @@ const DetailBar = ({ isOpen, onToggle, detailID }) => {
     useEffect(() => {
         if (isOpen) {
             document.getElementById("detailBar").classList.add("open");
+            document.body.classList.add('sidebar-open');
         } else {
             document.getElementById("detailBar").classList.remove("open");
+            document.body.classList.remove('sidebar-open');
         }
     }, [isOpen]);
 
+
+    useEffect(() => {
+        function handleScroll() {
+            const scrollTop = window.pageYOffset;
+            if (scrollTop > 0) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        }
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    const divStyle = {
+        top: isScrolled ? '245px' : '0',
+    };
     return (
-        <div id="detailBar" className="detailBar">
+        <div id="detailBar" className="detailBar"
+        >
             <div className='detailBar-inner'>
                 {loading ?
                     <Loader />

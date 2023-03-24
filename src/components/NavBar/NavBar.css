@@ -10,6 +10,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 30px 50px;
+    flex-wrap: wrap;
 }
 .header .navbar-main .navbar-left .navbar-heading {
     font-size: 22px;
@@ -17,9 +18,13 @@
     color: #333 !important;
     font-family: 'Poppins', sans-serif;
 }
+.header .navbar-main .navbar-left{
+    margin: 10px 0px;
+}
 .header .navbar-main .navbar-right{
     display: flex;
     align-items: center;
+    margin: 10px 0px;
 }
 .header .navbar-main .navbar-right .notification-count {
     font-size: 15px;

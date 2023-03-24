@@ -23,7 +23,7 @@ const ActivityFeed = () => {
             return
         }
         dispatch(fetchRecords());
-    }, [dispatch]);
+    }, [dispatch , activitiesData.length]);
 
     useEffect(() => {
         if (activitiesData) {
@@ -32,6 +32,9 @@ const ActivityFeed = () => {
     }, [activitiesData]);
 
     const handleToggle = async (callId) => {
+        console.log('====================================');
+        console.log('--callid',callId );
+        console.log('====================================');
         setIsOpen(!isOpen);
         setTimeout(() => {
             setDetailId(callId)

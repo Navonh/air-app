@@ -23,7 +23,7 @@ const ArchivedCalls = () => {
             return
         }
         dispatch(fetchRecords());
-    }, [dispatch]);
+    }, [dispatch, data.length]);
 
     useEffect(() => {
         if (data) {
